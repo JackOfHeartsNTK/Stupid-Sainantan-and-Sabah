@@ -1,0 +1,8 @@
+owner = BAK
+controller = BAK
+add_core = BAK
+add_core = AZB
+add_core = DAG
+add_core = PER
+trade_goods = fruit
+life_rating = 35

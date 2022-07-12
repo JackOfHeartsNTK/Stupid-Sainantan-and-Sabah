@@ -1,0 +1,626 @@
+#Tiniri
+ country_event = {
+	id = 100117 
+	title = "Rise of the Tiniri Sultanate"
+	desc = "EVENT100117"
+	fire_only_once = yes
+	major = yes
+
+     trigger = {
+		NOT = { has_global_flag = tiniri_disabled exists = TIN exists = MGH }
+		year = 1866
+		OR = {
+			tag = CLN
+			AND = {
+				ai = no 
+				OR = {
+					tag = MAS
+					tag = DAM
+					tag = MOR
+					tag = FEZ
+					tag = MRR
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 5
+	}
+
+
+	option = {
+		name = "EVT99800OPTA"
+		prestige = -20
+		#Occupied
+		        1699 = { secede_province = TIN add_core = TIN }
+				1698 = { secede_province = TIN add_core = TIN }
+				1722 = { secede_province = TIN add_core = TIN }
+				#1697 = { secede_province = TIN add_core = TIN }
+				1720 = { secede_province = TIN add_core = TIN }
+				1716 = { secede_province = TIN add_core = TIN }		
+                2609 = { secede_province = TIN add_core = TIN }	
+                1812 = { secede_province = TIN add_core = TIN }					
+      #Un-occupied
+		        1773 = { secede_province = TIN add_core = TIN }
+				1774 = { secede_province = TIN add_core = TIN }
+				1781 = { secede_province = TIN add_core = TIN }
+				1775 = { secede_province = TIN add_core = TIN }
+				1779 = { secede_province = TIN add_core = TIN }
+				1782 = { secede_province = TIN add_core = TIN }
+				3430 = { secede_province = TIN add_core = TIN }		
+                3431 = { secede_province = TIN add_core = TIN }		
+		        1801 = { secede_province = TIN add_core = TIN }
+				1711 = { secede_province = TIN add_core = TIN }
+				1718 = { secede_province = TIN add_core = TIN }
+				1719 = { secede_province = TIN add_core = TIN }
+				1807 = { secede_province = TIN add_core = TIN }				
+			TIN = { all_core = { secede_province = TIN } }
+			TIN = { country_event = 100118 }
+		    set_global_flag = tiniri
+	}
+	
+	option = {
+		name = "Join them" 
+		prestige = -20
+		#Occupied
+		        1699 = { secede_province = TIN add_core = TIN }
+				1698 = { secede_province = TIN add_core = TIN }
+				1722 = { secede_province = TIN add_core = TIN }
+				#1697 = { secede_province = TIN add_core = TIN }
+				1720 = { secede_province = TIN add_core = TIN }
+				1716 = { secede_province = TIN add_core = TIN }		
+                2609 = { secede_province = TIN add_core = TIN }		
+				1812 = { secede_province = TIN add_core = TIN }	
+      #Un-occupied
+		        1773 = { secede_province = TIN add_core = TIN }
+				1774 = { secede_province = TIN add_core = TIN }
+				1775 = { secede_province = TIN add_core = TIN }
+				1779 = { secede_province = TIN add_core = TIN }
+				1782 = { secede_province = TIN add_core = TIN }
+				3430 = { secede_province = TIN add_core = TIN }		
+                3431 = { secede_province = TIN add_core = TIN }		
+		        1801 = { secede_province = TIN add_core = TIN }
+				1711 = { secede_province = TIN add_core = TIN }
+				1718 = { secede_province = TIN add_core = TIN }
+				1719 = { secede_province = TIN add_core = TIN }
+				1807 = { secede_province = TIN add_core = TIN }				
+			TIN = { all_core = { secede_province = TIN } }
+			TIN = { country_event = 100118 }
+		    set_global_flag = tiniri
+			change_tag_no_core_switch = TIN
+	}
+}
+
+country_event = {
+	id = 100118
+	title = "From the Depths"
+	desc = "EVENT100118"
+	picture = "arab_revolt"
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "Lets take our Land"
+		capital = 1699
+		TIN = { all_core = { secede_province = THIS } }  	
+		random_list = {
+			20 = { 1699 = { any_pop = { reduce_pop = 3.5 } } }
+			20 = { 1699 = { any_pop = { reduce_pop = 5 } } }
+			20 = { 1699 = { any_pop = { reduce_pop = 7.5 } } }
+		}
+		any_pop = { 
+		limit = { 
+		type = soldiers 
+			} 
+			reduce_pop = 10.0
+		}
+		1781 = { secede_province = TIN add_core = TIN }	
+		MGH = { all_core = { add_core = THIS } } 
+		TIN = { all_core = { limit = { empty = yes } secede_province = THIS } }  		
+		add_country_flag = can_ignore_cultural_core
+		add_country_flag = exteme_assimilation
+		add_country_flag = theocratic_inetgration
+        ruling_party_ideology = conservative
+		add_country_modifier = { name = extremist_population duration = 4800 }
+		
+	}
+}
+
+country_event = {
+	id = 99890 #Segu War
+	title = "EVTNAME99890"
+	desc = "EVTDESC99890"
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		tag = MAS
+		year = 1844
+		NOT = { year = 1855 }
+		owns = 609
+		NOT = { has_country_flag = segu_war }
+	}
+
+	mean_time_to_happen = {
+		months = 5
+	}
+
+	option = {
+		name = "EVT99800OPTA"
+		prestige = -10
+		1800 = { secede_province = SEG }
+		war = {
+			target = SEG
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = status_quo }
+		}
+		set_country_flag = segu_war
+	}
+}	
+	
+#Hausa rebellion	
+ country_event = {
+	id = 99800 #Hausa REbellion
+	title = "EVTNAME99800"
+	desc = "EVTDESC99800"
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		tag = MAS
+		year = 1843
+		NOT = { year = 1855 }
+		owns = 1941
+		NOT = { has_country_flag = hasua }
+	}
+
+	mean_time_to_happen = {
+		months = 5
+	}
+
+	option = {
+		name = "EVT99800OPTA"
+		prestige = -20
+		any_owned = {
+			limit = { is_core = ARO }
+			secede_province = ARO
+		}
+		
+		ARO = {
+			any_pop = { militancy = -6 }
+		}
+		war = {
+			target = ARO
+			attacker_goal = { casus_belli = civil_war }
+			defender_goal = { casus_belli = status_quo }
+		}
+		set_country_flag = hasua
+	}
+}
+
+#Morrocan civil war
+country_event = {
+	id = 2010000 #Goods for armies
+	title = "Moroc0.t"
+	desc = "Moroc0.d"
+	fire_only_once = yes
+	picture = "supportwar"
+
+	trigger = {
+		tag = FEZ
+		NOT = { year = 1840 }
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	option = {
+		name = "Now, to the south!"
+		small_arms = 400
+		regular_clothes = 400
+		canned_food = 500
+		artillery = 100
+		ammunition = 200
+	}
+}
+
+#Building Nouadhibou
+country_event = {
+	id = 202000 #colonize coastal Mauritania
+	title = "Moroc1.t"
+	desc = "Moroc1.d"
+	fire_only_once = yes
+	picture = "al_wajbah"
+
+	trigger = {
+		tag = MOR
+		civilized = yes
+		owns = 1774
+		1775 = { empty = yes }
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "The Berbers must be subjugated..."
+		prestige = 10
+		1775 = {
+			change_province_name = "Nouadhibou"
+			secede_province = THIS
+			fort = 1
+			naval_base = 1
+		}
+	}
+}
+#Conquest of inner Mauritania
+country_event = {
+	id = 203000 #colonize inner Mauritania
+	title = "Moroc2.t"
+	desc = "Moroc2.d"
+	fire_only_once = yes
+	picture = "arab_revolt"
+
+	trigger = {
+		tag = MOR
+		civilized = yes
+		owns = 1775
+		owns = 1776
+		1779 = { empty = yes }
+	}
+
+	mean_time_to_happen = {
+		months = 10
+	}
+
+	option = {
+		name = "The Sahel is our oyster!"
+		prestige = 10
+		1779 = { add_core = THIS }
+		1781 = { add_core = THIS }
+		1782 = { add_core = THIS }
+		1801 = { add_core = THIS }
+		3430 = { add_core = THIS }
+		3431 = { add_core = THIS }
+		THIS = { all_core = { limit = { empty = yes } secede_province = THIS } }  	
+	}
+}
+
+#Loss of connection to Algeria
+country_event = {
+	id = 204000 #Algerian part of the nation is released
+	title = "lossAlg.t"
+	desc = "lossAlg.d"
+	fire_only_once = yes
+	picture = "arab_revolt"
+
+	trigger = {
+		tag = TRI
+		civilized = no
+		NOT = {
+			AND = {
+				owns = 1729
+				owns = 1730
+			}
+		}
+		NOT = { owns = 1711 }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "We are forever weakened..."
+		prestige = -10
+		random_country = {
+			limit = {
+				tag = RGA
+				owns = 1703
+			}
+			THIS = { 
+				any_owned = {
+					limit = {
+						is_core = RGA
+					}
+					secede_province = RGA
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				NOT = { tag = RGA }
+				owns = 1703
+			}
+			THIS = {
+				any_owned = {
+					limit = {
+						is_core = ALD
+					}
+					secede_province = ALD
+				}
+			}
+		}
+	}
+}
+
+
+
+
+#Suez Canal is Finished
+country_event = {
+	id = 100169
+	title = "EVTNAME36971"
+	desc = "EVTDESC36971"
+	picture = "suez_canal_built"
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "EVT36971OPTA"
+		set_country_flag = suez_builder
+		enable_canal = 2
+	}
+}
+
+##############
+#SOUTH AFRICA#
+##############
+
+country_event = {
+
+	id = 50000
+
+	trigger = {
+            year = 1841
+			capital = 2100		
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 8
+	}
+
+	title = "xhosaprophet1_title"
+	desc = "xhosaprophet1_desc"
+	picture = "xhosa_prophet"
+
+	option = {
+		name = "xhosaprophet1_option1"
+		any_pop = {consciousness = 5 
+                	militancy = -5}
+		set_global_flag = xhosaprophet
+		set_country_flag = xhosaprophet
+	}
+	option = {
+		name = "xhosaprophet1_option2"
+		any_pop = {consciousness = -5 
+		           militancy = 5}
+	}
+	}
+	
+	country_event = {
+
+	id = 50001
+
+	trigger = {
+            year = 1842
+			tag = ZUL
+			has_global_flag = xhosaprophet
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 8
+	}
+
+	title = "xhosaprophet2_title"
+	desc = "xhosaprophet2_desc"
+	picture = "xhosa_prophet"
+
+	option = {
+		name = "xhosaprophet2_option1"
+		any_pop = {consciousness = 2}
+	}
+	}
+	
+		country_event = {
+
+	id = 50002
+
+	trigger = {
+            year = 1845
+			capital = 2100	
+			has_global_flag = xhosaprophet
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	title = "xhosaprophet3_title"
+	desc = "xhosaprophet3_desc"
+	picture = "xhosa_learning"
+
+	option = {
+		name = "xhosaprophet3_option1"
+		years_of_research = 5
+	}
+	}
+	
+	country_event = {
+
+	id = 50003
+
+	trigger = {
+            year = 1849
+			capital = 2100	
+			has_global_flag = xhosaprophet
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+
+	title = "xhosaprophet4_title"
+	desc = "xhosaprophet4_desc"
+	picture = "xhosa_war"
+
+	option = {
+		name = "xhosaprophet4_option1"
+		ZUL = { country_event = 50004 }
+		cattle = 10
+		                  
+	}
+		option = {
+		name = "xhosaprophet4_option2"
+		ZUL = { country_event = 50004 }
+		cattle = 10
+	}
+	}
+	
+		country_event = {
+
+	id = 50004
+
+	fire_only_once = yes
+
+	title = "xhosaprophet5_title"
+	desc = "xhosaprophet5_desc"
+	picture = "xhosa_war"
+	is_triggered_only = yes
+
+	option = {
+		name = "xhosaprophet5_option1"
+		cattle = -10 
+		war = { target = XHO
+                attacker_goal = { casus_belli = conquest_low }
+  				defender_goal = { casus_belli = status_quo }
+		badboy = -12		
+	}
+	}
+		option = {
+		name = "xhosaprophet5_option2"
+        any_pop = {militancy = 5}
+		cattle = -10
+	}
+	}
+	
+	country_event = {
+
+	id = 50005
+
+	trigger = {
+            year = 1853
+			capital = 2100	
+			has_global_flag = xhosaprophet
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 4
+	}
+
+	title = "xhosaprophet6_title"
+	desc = "xhosaprophet6_desc"
+	picture = "xhosa_marriage"
+
+	option = {
+		name = "xhosaprophet6_option1"
+		any_pop = { consciousness = -3 }                 
+        prestige = 5		
+	}
+	}
+	
+	country_event = {
+
+	id = 50006
+
+	trigger = {
+            year = 1858
+			capital = 2100	
+			has_global_flag = xhosaprophet
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 18
+	}
+
+	title = "xhosaprophet7_title"
+	desc = "xhosaprophet7_desc"
+	picture = "xhosa_chief"
+
+	option = {
+		name = "xhosaprophet7_option1"   
+        government = theocracy		
+	}
+	}
+	
+		country_event = {
+
+	id = 50007
+
+	trigger = {
+            year = 1870
+			capital = 2100	
+			has_global_flag = xhosaprophet
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen =  {
+		months = 18
+	}
+
+	title = "xhosaprophet8_title"
+	desc = "xhosaprophet8_desc"
+	picture = "xhosa_woman"
+
+	option = {
+		name = "xhosaprophet8_option1"   
+        any_pop = { consciousness = 6 }
+	}
+	}
+	
+			country_event = {
+
+	id = 50008
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	title = "xhosaprophet9_title"
+	desc = "xhosaprophet9_desc"
+	picture = "xhosa_woman"
+
+	option = {
+		name = "xhosaprophet9_option1"   
+        money = 25000
+		FROM = { money = -25000
+		         2049 = { secede_province = FROM }
+				} 
+	}
+		option = {
+		name = "xhosaprophet9_option2"   
+                relation = { who = FROM value = -100
+	}
+	}

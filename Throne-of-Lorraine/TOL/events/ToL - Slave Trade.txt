@@ -1,0 +1,125 @@
+#based of AoE's thing
+
+country_event = {
+	id = 100121
+	title = "The Slave Trade"
+	desc = SLAVETRADE
+	picture = "auction"
+
+	trigger = {
+	
+	slavery = yes_slavery
+		
+	NOT = { 
+	has_country_modifier = slavepopupdated
+	has_country_flag = slave_abolished
+	}
+	
+	any_owned_province = {
+	OR = {
+		continent = central_africa
+		continent = africa
+		continent = west_africa
+		continent = east_africa
+		}
+	}
+	capital_scope = {
+			OR = {
+				continent = north_america
+				continent = south_america
+				}
+			}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	immediate = {
+		add_country_modifier = {
+		name = slavepopupdated
+		duration = 365
+		}
+	}
+
+	option = {
+		name = "The Slave trade is great" 
+		
+			any_pop = {
+				limit = {
+					type = slaves 
+					location = {
+						OR = {
+							continent = north_america
+							continent = south_america
+							continent = australia_new_zealand
+						}
+					}
+				}
+				reduce_pop = 1.04
+			}
+			
+			
+		
+			
+			any_pop = {
+				limit = { 
+					type = labourers 
+					location = {
+						OR = {
+							continent = north_america
+							continent = south_america
+							continent = australia_new_zealand
+						}
+						OR = {
+							is_overseas = yes
+							is_core = THIS
+						}
+					}
+				}
+				money = -50
+			}
+			any_pop = {
+				limit = { 
+					type = aristocrats 
+					location = {
+						OR = {
+							continent = north_america
+							continent = south_america
+							continent = australia_new_zealand
+						}
+						OR = {
+							is_overseas = yes
+							is_core = THIS
+						}
+					}
+				}
+				money = -75
+			}
+	}
+}
+
+
+#Slavery trade rgo removed on abolition
+province_event = {
+    id = 38506
+    title = "EVTNAME38506"
+    desc = "EVTDESC38506"
+
+    trigger = {
+        trade_goods = sugar
+        OR = {
+            owner = { slavery = no_slavery }
+            state_scope = { is_slave = no }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "EVT38506OPTA"
+        trade_goods = cotton
+    }
+}
