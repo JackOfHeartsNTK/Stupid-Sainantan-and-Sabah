@@ -3026,14 +3026,26 @@ southeast_asian = {
 		last_names = { Acton Albricci Badoglio Baldissera Baratieri Bava-Beccaris Cadorna Cagni Canevaro Capello
 		Caviglia Ceccherini Cialdini Cusani "di Robilant" Emo Fanti Fara Filomarino Garibaldi Giardino Govone "La Màrmora" Mambretti
 		Menabrea Orengo "Pacoret de Saint Bon" Pallavicino Pecori-Giraldi "Pellion di Persano" Pelloux Perruchetti Pianelli Porro
-		Presbitero Ramorino Ricotti-Magnani Sacchi Saletta Sanna Solari "Thaon di Revel" Vaccari Zupelli }	
+		Presbitero Ramorino Ricotti-Magnani Sacchi Saletta Sanna Solari "Thaon di Revel" Vaccari Zupelli Katuna Bankaw Urraw Humabon Tupas Lapu-Lapu Siagu }	
 	}
 	rusoni = {
 		color = { 209 230 130 }
-		first_names = { Arisugawa Arichi Akiyama Araki Dewa Enomoto Hasegawa Honjo Ito Inoue Ichinohe Itagaki Kido Kuroda Katsura Kodama Kabayama Kawamura Kuroki Kawakami Kamimura Kataoka Kamio Kato Kanin Katsu Makino Muto Minami Masaki Matsudaira Nakamuta Nogi Nire Nozu Okubo Oyama Omura Oku Okada Osumi
-		Saigo Suzuki Sato Sakura Shibayama Shimamura Shirakawa Togo Takashima Tsuboi Tachibana Terauchi Tamon Takasugi Tokugawa Uehara Uryu Ugaki Ueda Yamagata Yamamoto Yamakawa Yashiro Yui Yamashita Yamaya Uesugi Takeda Abe Usami Watanabe Honda Hosokawa Asai Askikaga Chosokabe Date Fukushima Genji Hachisuka Hattori Heike Hojo Ishida Kaga Kuki Maeda Miyamoto Mori Murakami Oda Okamoto Ooka Saito Shibata Shimazu Suwa Takigawa Tanuma Ukita Konoe Takashi Kujo Ichijo Gojo Aburakoji Anenokoji Asukai Daigo Hirohata Imaidegawa Inokuma Jimyoin Kajuji Kaoin Karasuma Kawashi Konjo Kuga Masachika	Matsuki	Minase	Nakayama Nanba Nomiya Oimikado Rakujochigusa Reizei Saioji Sanjo Shigenoi Shijo Shimizudani Tokudaiji Washio Yamashina
+		first_names = { Aris Archi Aki Araki Dea Enmot Hase Honjo Ito Inowe Chinohe Tagaki Kido Kuroda Kachura Kodama Kabaya Kawamu Kuroki Kawami Mimura Katao Kamio Kato 
+		Kanin Katsu Makino Muto Minami Masaki Matsuda Nakamu Nogi Nire Nozu Okubo Oyama Omura Oku Okada Osumi Saigo Suzuki Sato Sakura Shibaya Shimamu Shiraka Togo 
+		Takashi Chubo-i Tachi Terau Tamon Kasugi Kugawa Ehara Uryu Ugaki Eda Yamaga Yamamo Yamaka Yashiro Yu Yamashi Yamaya Sugi Takeda 
 		}
-		last_names = { Aritomo Goro Gentaro Gonnohyoe Heihachiro Hiroshi Hikonojo Hyoe Hayao Iwao Jiro Jinzaburo Kiyotaka Kuranosuke Kozo Kantaro Koichiro Kagenori Kageaki Kotohito Keisuke Kazushige Kenkichi Maresuke Masujiro Michisura Masatake Mitsuomi Mitsue Mineo Nariaki Nobuyoshi Rokuro Sukeyuki Sukenori Shoin Sumiyoshi Samata Soroku Shichiro Shigeto Sotokichi Shigeru Sadao Shinsaku Takayoshi Takamori Toshimichi Tsugumichi Tadakuni Tomonosuke Taro Toshiyoshi Tetsutaro Taruhito Takeaki Tamemoto Tomasaburo Yoshika Yoshinobu Yoshimichi Yoshida Yasukata Yahachi Yusaku Yoshifuru Yoshinori Yasuyoshi Ieyasu
+		last_names = { "Amani Langawi" "Amani Calao" "Amani Hikon" "Amani Gada" "Amani Macaraeg" "Amani Panganiban" "Amani Dimayuga" "Amani Dimalanta" "Amani Pangilinan"
+		"Amani Matanda" "Amani Mabangis" "Amani Katiwala" 
+		}
+	}
+	konketsu = {
+		color = { 20 230 130 }
+		first_names = { Aritomo Goro Gentaro Gonnohyoe Heihachiro Hiroshi Hikonojo Hyoe Hayao Iwao Jiro Jinzaburo Kiyotaka Kuranosuke Kozo Kantaro Koichiro Kagenori 
+		Kageaki Kotohito Keisuke Kazushige Kenkichi Maresuke Masujiro Michisura Masatake Mitsuomi Mitsue Mineo Nariaki Nobuyoshi Rokuro Sukeyuki Sukenori Shoin 
+		Sumiyoshi Samata Soroku Shichiro Shigeto Sotokichi Shigeru Sadao Shinsaku Takayoshi Takamori Toshimichi Tsugumichi Tadakuni Tomonosuke Taro Toshiyoshi 
+		Tetsutaro Taruhito Takeaki Tamemoto Tomasaburo Yoshika Yoshinobu Yoshimichi Yoshida Yasukata Yahachi Yusaku Yoshifuru Yoshinori Yasuyoshi Ieyasu
+		}
+		last_names = { Lacandola Macapagal Macabulos Tupas Ache Laran Guinyamat Dahitim Turingan Magat Kalangitan Zexu Baozhen Baochen Nai-siong Shu Fu Sen Debang Xin Nee Huiyin Lin Shen Chen Wong Yan Sa Hou Zheng Bing Wu Tan He Du Xue Xu Qin
 		}
 	}
 	moro = {
